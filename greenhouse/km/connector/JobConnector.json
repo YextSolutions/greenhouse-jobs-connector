@@ -1,0 +1,126 @@
+{
+  "$id": "greenhouse_JobConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v1",
+  "displayName": "Greenhouse Job Connector",
+  "entityType": "job",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://boards-api.greenhouse.io/v1/boards/yext/jobs",
+        "paginationControl": {
+          "linkHeaderPagination": {
+            "relationLabel": "next",
+            "linkType": "FULL_URL"
+          }
+        },
+        "headers": {},
+        "queryParams": {},
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "jobs"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "Entity ID",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "Job ID",
+        "path": "internal_job_id"
+      },
+      {
+        "type": "JSON",
+        "header": "Role",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "Date Updated",
+        "path": "updated_at"
+      },
+      {
+        "type": "JSON",
+        "header": "Location",
+        "path": "location.name"
+      },
+      {
+        "type": "JSON",
+        "header": "Landing Page URL",
+        "path": "absolute_url"
+      },
+      {
+        "type": "JSON",
+        "header": "Description",
+        "path": "content"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "extractText": {
+        "inputHeader": "Date Updated",
+        "newColumnHeader": "Date Updated (final)",
+        "extractOperation": "ALL_TEXT_BEFORE",
+        "extractFrom": "FIRST_INSTANCE_MATCHING_TEXT",
+        "valueToFind": {
+          "plainText": {
+            "value": "T",
+            "ignoreCase": false
+          }
+        }
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "name",
+      "header": "Role",
+      "subfieldPath": []
+    },
+    {
+      "field": "greenhouse_jobID",
+      "header": "Job ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "greenhouse_dateUpdated",
+      "header": "Date Updated (final)",
+      "subfieldPath": []
+    },
+    {
+      "field": "landingPageUrl",
+      "header": "Landing Page URL",
+      "subfieldPath": []
+    },
+    {
+      "field": "description",
+      "header": "Description",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "Entity ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "location",
+      "header": "Location",
+      "subfieldPath": [
+        {
+          "name": "externalLocation"
+        }
+      ]
+    }
+  ],
+  "scheduleConfig": {
+    "useSourceSchedule": false,
+    "runMode": "DEFAULT"
+  }
+}
