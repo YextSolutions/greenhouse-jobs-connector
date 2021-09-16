@@ -1,5 +1,5 @@
 {
-  "$id": "greenhouse_JobConnector",
+  "$id": "greenhouse_jobConnector",
   "$schema": "https://schema.yext.com/config/km/connector/v1",
   "displayName": "Greenhouse Job Connector",
   "entityType": "job",
