@@ -7,7 +7,7 @@
     "sourceConfig": {
       "apiPullConfig": {
         "requestType": "GET",
-        "url": "https://boards-api.greenhouse.io/v1/boards/${{boardTOKEN}}/jobs",
+        "url": "https://boards-api.greenhouse.io/v1/boards/${{boardToken}}/jobs",
         "paginationControl": {
           "linkHeaderPagination": {
             "relationLabel": "next",
