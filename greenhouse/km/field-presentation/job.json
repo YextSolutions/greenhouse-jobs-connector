@@ -1,5 +1,5 @@
 {
-  "$id": "greenhouse_job",
+  "$id": "ce_job",
   "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
   "entityType": "job",
   "displayName": "Job",
