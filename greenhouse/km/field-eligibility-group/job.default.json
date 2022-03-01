@@ -1,5 +1,5 @@
 {
-  "$id": "job.default",
+  "$id": "greenhouse_job",
   "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
   "name": "Job-default",
   "entityType": "job",
