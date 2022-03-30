@@ -5,24 +5,13 @@
   "entityType": "job",
   "source": {
     "sourceConfig": {
-      "apiPullConfig": {
-        "requestType": "GET",
-        "url": "https://boards-api.greenhouse.io/v1/boards/${{boardToken}}/jobs",
-        "paginationControl": {
-          "linkHeaderPagination": {
-            "relationLabel": "next",
-            "linkType": "FULL_URL"
-          }
-        },
-        "headers": {},
-        "queryParams": {},
-        "dataFormat": "JSON"
+      "nativeSourceConfig": {
+        "source": "greenhouse",
+        "operation": "fetchJobs",
+        "inputs": {
+          "boardToken": "${{boardToken}}"
+        }
       }
-    },
-    "baseSelector": {
-      "type": "JSON",
-      "header": "Entity Container",
-      "path": "jobs"
     },
     "selectors": [
       {
