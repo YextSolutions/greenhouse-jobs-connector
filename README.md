@@ -8,7 +8,7 @@ This simple app automatically syncs job data such as title, description, locatio
 
 # Requirements
 
-### To use this template you will need to have the following:
+### To use this template you will need to have the following before you install:
 
 - A Greenhouse account 
 - Your Greenhouse job board token
