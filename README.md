@@ -6,6 +6,11 @@ Sync job data from Greenhouse to Yext to amplify your recruiting efforts! Greenh
 
 This simple app automatically syncs job data such as title, description, location, and application URL to Yext, any new job, update, or close a position in Greenhouse these same changes will occur in Yext. Now you can extend the reach of your Greenhouse job data even further to power Yext products such as Answers and Pages! 
 
+This app uses the built in Job entity type and creates two custom fields to align with Greenhouse’s data structure.
+
+- Job ID 
+- Date Updated
+
 # Requirements
 
 ### To use this template you will need to have the following before you install:
@@ -13,18 +18,12 @@ This simple app automatically syncs job data such as title, description, locatio
 - A Greenhouse account 
 - Your Greenhouse job board token
 
-This app uses the built in Job entity type and creates two custom fields to align with Greenhouse’s data structure.
-
-- Job ID 
-- Date Updated
-
+# How to Install
 If you are an existing Yext customer, you can install the Greenhouse Jobs Connector here <https://www.yext.com/s/me/apps/59283>
 
 If you are currently using a Yext sandbox account, you can install the Greenhouse Jobs Connector here <https://sandbox.yext.com/s/me/apps/45560>.
 
 If you are not an existing customer, but interested in learning more, try out a free trial here for a production account, or sign up for Hitchhikers and get started with a sandbox account, here <https://hitchhikers.yext.com/>. 
-
-# How to Install
 
 ### To install the Greenhouse Jobs Connector:
 
